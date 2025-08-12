@@ -16,6 +16,7 @@ public class Player : Character
 
     public void ChangeWeapon(Weapon weapon)
     {
+        Console.WriteLine($"{_weapon.Name} was changed for {weapon.Name}");
         _weapon = weapon;
     }
 }
