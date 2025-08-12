@@ -2,19 +2,19 @@
 
 public abstract class Character
 {
-    private string _name;
+    protected readonly string Name;
     public int Health { get; protected set; }
 
     protected Character(string name, int health)
     {
-        _name = name;
+        Name = name;
         Health = health;
     }
 
     public void TakeDamage(int damage)
     {
         Health -= damage;
-        Console.WriteLine($"{_name} takes {damage} damage.");
+        Console.WriteLine($"{Name} takes {damage} damage.");
     }
     
     public abstract void Attack();
