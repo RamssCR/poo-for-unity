@@ -1,25 +1,18 @@
 ﻿using PooForUnity;
 
-// Weapons
-Weapon axe = new("Axe", 15);
-Weapon sword = new("Sword", 10);
-Weapon zweihander = new("Zweihander", 25);
+var potion = new Item("Potion", 1, true);
+var gold = new Item("Gold", 2, true);
+var sword = new Item("Sword", 5, false);
 
-// Players
-Player hermit = new("Kendall", 100, axe);
-Player knight = new("Zell", 150, sword);
+Inventory inventory = new();
 
-// Enemies
-Enemy glob = new("Glob", 32, 5);
-Boss dragon = new("Dragon", 500, 20);
+inventory.AddItem(potion, 3);
+inventory.AddItem(gold, 2);
+inventory.AddItem(sword);
+inventory.AddItem(sword);
+inventory.AddItem(potion, 10); // Inventory full
 
-// Attacking enemies
-hermit.Attack();
-glob.TakeDamage(15);
+inventory.PrintInventory();
 
-dragon.Attack();
-knight.TakeDamage(20);
-
-// Changing weapons
-knight.ChangeWeapon(zweihander);
-knight.Attack();
+inventory.RemoveItem("Sword");
+inventory.PrintInventory();
